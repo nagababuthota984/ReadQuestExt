@@ -1,0 +1,134 @@
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #c5c5c5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 450px;
+    border-radius: 20px;
+}
+
+.header{
+    background: linear-gradient(to right, #8703de, #7e0fca);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 12px;
+    box-sizing: border-box;
+}
+.header-title{
+    font-size: 20px;
+    color: white;
+    font-weight:600;
+}
+.content{
+    padding:12px;
+
+}
+.container {
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin:0;
+}
+#title{
+    margin: 0px;
+    padding: 0px;
+    font-size:18px;
+    font-weight: 500;
+}
+.caption{
+    font-size: 14px;
+    font-weight: 400;
+    margin:5px 0px 0px 0px;
+}   
+
+
+.question {
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.options {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.options li {
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 2% 4%;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px 5px 5px 0px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#result-container {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#submit-btn {
+    display: none;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    display: none;
+    margin: auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.correct-option {
+    /* background-color: #2ecc71;  */
+    color: #2ecc71; 
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.wrong-option {
+    /* background-color: #e74c3c;  */
+    color: #e74c3c; 
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.option:hover {
+    cursor: pointer;
+}

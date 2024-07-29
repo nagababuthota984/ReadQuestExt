@@ -1,0 +1,44 @@
+{
+    "questions": [
+        {
+            "question": "What is the primary purpose of a Node.js server?",
+            "option1": "To store and manage data.",
+            "option2": "To provide a graphical user interface (GUI).",
+            "option3": "To handle requests and send responses over a network.",
+            "option4": "To compile and execute JavaScript code.",
+            "correctAnswer": "To handle requests and send responses over a network."
+        },
+        {
+            "question": "Which built-in module in Node.js is commonly used to create HTTP servers?",
+            "option1": "fs",
+            "option2": "http",
+            "option3": "os",
+            "option4": "path",
+            "correctAnswer": "http"
+        },
+        {
+            "question": "What is the main function used to create a server in Node.js?",
+            "option1": "createServer()",
+            "option2": "startServer()",
+            "option3": "listen()",
+            "option4": "runServer()",
+            "correctAnswer": "createServer()"
+        },
+        {
+            "question": "How do you specify the port on which the server should listen for requests?",
+            "option1": "Using the 'port' parameter in the createServer() function.",
+            "option2": "By setting the 'PORT' environment variable.",
+            "option3": "Using the 'listen()' function with a port number.",
+            "option4": "Through configuration files.",
+            "correctAnswer": "Using the 'listen()' function with a port number."
+        },
+        {
+            "question": "Which of the following is NOT a typical component of a Node.js server?",
+            "option1": "Request handling",
+            "option2": "Response generation",
+            "option3": "Database interaction",
+            "option4": "Event loop",
+            "correctAnswer": "Event loop"
+        }
+    ]
+}
