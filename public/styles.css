@@ -13,7 +13,7 @@ body {
 }
 
 .header{
-    background: linear-gradient(to right, #8703de, #7e0fca);
+    background: linear-gradient(to right, #021526, #03346e);
     height: 50px;
     display: flex;
     align-items: center;
@@ -73,7 +73,7 @@ body {
 }
 
 button {
-    background-color: #007bff;
+    background-color: #03346e;
     color: #fff;
     border: none;
     padding: 2% 4%;
@@ -96,10 +96,10 @@ button:hover {
     display: none;
 }
 
-.loader {
+#loader {
     border: 16px solid #f3f3f3;
     border-radius: 50%;
-    border-top: 16px solid #3498db;
+    border-top: 16px solid #03346e;
     width: 120px;
     height: 120px;
     animation: spin 2s linear infinite;
@@ -119,7 +119,8 @@ button:hover {
 
 .correct-option {
     /* background-color: #2ecc71;  */
-    color: #2ecc71; 
+    color: #4bb14f; 
+    font-weight: bold;
     transition: background-color 0.3s, border-color 0.3s;
 }
 
@@ -131,4 +132,14 @@ button:hover {
 
 .option:hover {
     cursor: pointer;
+}
+.radio-btn {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #cccccc;
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.3s;
+    color: #021526;
 }
