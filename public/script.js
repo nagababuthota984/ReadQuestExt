@@ -1,11 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
+
   const quizContainer = document.getElementById("quiz-container");
   const submitBtn = document.getElementById("submit-btn");
   const resultContainer = document.getElementById("result-container");
   const startButton = document.getElementById("start-button");
-  let baseURL = "https://readquest-nb-lnx-ewdjhehedkdnd3fr.eastus-01.azurewebsites.net/prompt";
+  const titleLabel = document.getElementById("title");
+
+  let apiURL = "https://readquest-nb-lnx-ewdjhehedkdnd3fr.eastus-01.azurewebsites.net/prompt";
   let quizData;
-  let heading;
+  let titleContent;
 
   //Get Heading
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
@@ -15,11 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
         function: getH1Element,
       },
       (results) => {
-        if (results[0].result) {
-          heading = results[0].result;
-          document.getElementById("title").innerText = results[0].result;
+        if (results && results[0].result) {
+          titleContent = results[0].result;
+          titleLabel.innerText = titleContent;
         } else {
-          document.getElementById("title").innerText = "No MCQ Found";
+          titleLabel.innerText = "Couldn't find the topic's title";
         }
       }
     );
@@ -27,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   startButton.addEventListener("click", () => {
     document.getElementById('loader').style.display = 'block';
-    buildFetchRequest(heading);
+    buildFetchRequest(titleContent);
     startButton.innerText = "generating...";
     startButton.disabled = true;
     document.getElementById('loader').style.display = 'none';
@@ -36,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Populate Quiz
   async function buildFetchRequest(heading) {
     let encodedQuery = encodeURIComponent(heading);
-    url = `${baseURL}?query=${encodedQuery}`;
+    url = `${apiURL}?query=${encodedQuery}`;
 
     try {
       const response = await fetch(url);
@@ -45,8 +48,10 @@ document.addEventListener("DOMContentLoaded", () => {
         .replace(/```json/g, "")
         .replace(/```/g, "")
         .trim();
+
       quizData = JSON.parse(data);
       renderQuiz(quizData);
+      
       startButton.style.display = "none";
       submitBtn.style.display = "block";
     } catch (error) {
