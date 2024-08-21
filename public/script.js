@@ -68,8 +68,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const questionDiv = document.createElement("div");
       questionDiv.classList.add("question");
 
-      const questionTitle = document.createElement("h2");
+      const questionTitle = document.createElement("p");
       questionTitle.textContent = question.question;
+      questionTitle.classList.add('question-label');
       questionDiv.appendChild(questionTitle);
 
       for (let i = 1; i <= 4; i++) {

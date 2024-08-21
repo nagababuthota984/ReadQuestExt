@@ -48,24 +48,32 @@ body {
     font-size: 14px;
     font-weight: 400;
     margin:5px 0px 0px 0px;
+    opacity: 0.8;
 }   
 
 
 .question {
     margin-bottom: 10px;
-    font-weight: 400;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.question-label{
+    margin-bottom: 5px;
 }
 
 .options {
     list-style: none;
     padding: 0;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .option {
     display: flex;
     align-items: center;
     gap: 4px;
+    font-size:13px;
+    font-weight: normal;
 }
 
 .options li {
@@ -105,6 +113,16 @@ button:hover {
     animation: spin 2s linear infinite;
     display: none;
     margin: auto;
+}
+
+#disclaimer {
+    background-color: #f9f9f9;
+    color: #555;
+    font-size: 11px;
+    padding: 10px;
+    border-left: 4px solid #ccc;
+    margin-top: 20px;
+    border-radius: 5px;
 }
 
 @keyframes spin {
